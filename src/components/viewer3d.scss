@@ -1,0 +1,28 @@
+.viewer-3d {
+    position: relative;
+}
+
+.drag-handle-viewable {
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    top: 0;
+    left:0;
+    background-color: #00aaaa;
+
+}
+
+.drag-handle-dragable {
+    position: relative;
+    width: 20px;
+    left: -10px;
+    height: 100%;
+    background-color: #0000aa00;
+
+}
+
+.viewer-continer {
+    width: 200px;
+    height: 200px;
+    background-color: #EEEEEE;
+}
