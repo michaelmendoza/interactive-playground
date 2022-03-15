@@ -2,7 +2,27 @@
     position: relative;
 }
 
-.drag-handle-viewable {
+.drag-handle-viewable-h {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    top: 0;
+    left:0;
+    background-color: #00aaaa;
+
+}
+
+.drag-handle-dragable-h {
+    position: relative;
+    width: 100%;
+    top: -10px;
+    height: 20px;
+    background-color: #0000aa00;
+
+}
+
+
+.drag-handle-viewable-v {
     position: absolute;
     width: 2px;
     height: 100%;
@@ -12,9 +32,9 @@
 
 }
 
-.drag-handle-dragable {
+.drag-handle-dragable-v {
     position: relative;
-    width: 20px;
+    width: 2px;
     left: -10px;
     height: 100%;
     background-color: #0000aa00;
