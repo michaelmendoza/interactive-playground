@@ -7,23 +7,24 @@ import Sagittal from './components/Sagittal';
 const Planes = () =>{
   const [position, setPosition] = useState({ x:100, y:100, z:100 })
   return (
-    <div>
+    <div className = 'wrapper'>
       <h2>Transverse</h2>
+      <h2>Coronal</h2>
+      <h2 >Saggital</h2>
       <div>
         <Transverse position = {position} setPosition = {setPosition}></Transverse> 
       </div>
-      <h2>Coronal</h2>
       <div>
         <Coronal position = {position} setPosition = {setPosition}></Coronal>
       </div>
-      <h2>Saggital</h2>
       <div>
         <Sagittal position = {position} setPosition = {setPosition}></Sagittal>
       </div>
-      <div>
+      <div className='box1'>
       ({position.x}, {position.y}, {position.z})
       </div>
     </div>
+    
   );
 }
 
