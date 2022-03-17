@@ -73,10 +73,10 @@ const Coronal = ({position, setPosition}) => {
     <div className='viewer-3d'>
 
         <div className='viewer-continer' style={{ backgroundColor: color}} ref={viewerRef} onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}>
-          <div className='drag-handle-viewable-h' style={{ top:position.z }} onMouseDown={handleMouseDown} onMouseUp={handleMouseUp}> 
+          <div className='drag-handle-viewable-h-yellow' style={{ top:position.z }} onMouseDown={handleMouseDown} onMouseUp={handleMouseUp}> 
             <div className='drag-handle-dragable-h'></div>
           </div>  
-          <div className='drag-handle-viewable-v' style={{ left:position.y }} onMouseDown={handleMouseDown} onMouseUp={handleMouseUp}> 
+          <div className='drag-handle-viewable-v-green' style={{ left:position.y }} onMouseDown={handleMouseDown} onMouseUp={handleMouseUp}> 
             <div className='drag-handle-dragable-v'></div>
           </div>  
         </div>
