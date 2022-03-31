@@ -5,7 +5,7 @@ import Coronal from './components/Coronal';
 import Sagittal from './components/Sagittal';
 
 const Planes = () =>{
-  const [picturesize, setPicsize] = useState({  x:100, y:200, z:300 })
+  const [picturesize, setPicsize] = useState({  x:200, y:200, z:300 })//less than 300
   const [position, setPosition] = useState({ x:picturesize.x/2, y:picturesize.y/2, z:picturesize.z/2 })
   return (
     <div className = 'wrapper'>

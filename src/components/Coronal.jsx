@@ -73,7 +73,7 @@ const Coronal = ({position, setPosition, picturesize}) => {
     <div className='viewer-3d'>
 
         <div className='viewer-continer' style={{ width : picturesize.x , height : picturesize.z }} ref={viewerRef} onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}>
-          <div className='drag-handle-viewable-h-yellow' style={{ top:position.z }} onMouseDown={handleMouseDown} onMouseUp={handleMouseUp}> 
+          <div className='drag-handle-viewable-h-yellow' style={{ top:position.z, width: picturesize.x}} onMouseDown={handleMouseDown} onMouseUp={handleMouseUp}> 
             <div className='drag-handle-dragable-h'></div>
           </div>  
           <div className='drag-handle-viewable-v-purple' style={{ left:position.x }} onMouseDown={handleMouseDown} onMouseUp={handleMouseUp}> 
