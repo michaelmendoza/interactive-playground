@@ -2,7 +2,7 @@ import { useRef, useState } from 'react';
 import './viewer3d.scss';
 
 
-const Transverse = ({position, setPosition}) => {
+const Transverse = ({position, setPosition, picturesize}) => {
   const viewerRef = useRef(null);
 
   const [canDrag, setCanDrag] = useState(false);
@@ -74,8 +74,8 @@ const Transverse = ({position, setPosition}) => {
 
     <div className='viewer-3d'>
 
-        <div className='viewer-continer' style={{ backgroundColor: color}} ref={viewerRef} onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}>
-          <div className='drag-handle-viewable-h-green' style={{ top:position.y,color:'black'}} onMouseDown={handleMouseDown} onMouseUp={handleMouseUp}> 
+        <div className='viewer-continer' style={{ width: picturesize.x, height: picturesize.y}} ref={viewerRef} onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}>
+          <div className='drag-handle-viewable-h-green' style={{ top:position.y}} onMouseDown={handleMouseDown} onMouseUp={handleMouseUp}> 
             <div className='drag-handle-dragable-h'></div>
           </div>  
           <div className='drag-handle-viewable-v-purple' style={{ left:position.x }} onMouseDown={handleMouseDown} onMouseUp={handleMouseUp}> 

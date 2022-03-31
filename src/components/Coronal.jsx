@@ -2,7 +2,7 @@ import { useRef, useState } from 'react';
 import './viewer3d.scss';
 
 
-const Coronal = ({position, setPosition}) => {
+const Coronal = ({position, setPosition, picturesize}) => {
   const viewerRef = useRef(null);
 
   const [canDrag, setCanDrag] = useState(false);
@@ -72,7 +72,7 @@ const Coronal = ({position, setPosition}) => {
 
     <div className='viewer-3d'>
 
-        <div className='viewer-continer' style={{ backgroundColor: color}} ref={viewerRef} onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}>
+        <div className='viewer-continer' style={{ width : picturesize.x , height : picturesize.z }} ref={viewerRef} onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}>
           <div className='drag-handle-viewable-h-yellow' style={{ top:position.z }} onMouseDown={handleMouseDown} onMouseUp={handleMouseUp}> 
             <div className='drag-handle-dragable-h'></div>
           </div>  

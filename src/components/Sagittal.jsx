@@ -2,13 +2,14 @@ import { useRef, useState } from 'react';
 import './viewer3d.scss';
 
 
-const Coronal = ({position, setPosition}) => {
+const Coronal = ({position, setPosition, picturesize}) => {
   const viewerRef = useRef(null);
 
   const [canDrag, setCanDrag] = useState(false);
   
   const [color, setColor] = useState('#EEEEEE')
   const [isDark, setIsDark] = useState(false)
+  const [pictureWidth, setwidth] = useState(picturesize.y) //hard code here
   
 
   const handleClick = () => {
@@ -46,7 +47,7 @@ const Coronal = ({position, setPosition}) => {
     var rect = viewerRef.current.getBoundingClientRect();
 
     let x = position.x
-    let y = Math.round(e.pageX - rect.left);
+    let y = Math.round(rect.right - e.pageX );
     let z = Math.round(e.pageY - rect.top );
 
     z = z < 0 ? 0 : z
@@ -72,11 +73,11 @@ const Coronal = ({position, setPosition}) => {
 
     <div className='viewer-3d'>
 
-        <div className='viewer-continer' style={{ backgroundColor: color}} ref={viewerRef} onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}>
+        <div className='viewer-continer' style={{ width: picturesize.y, height: picturesize.z}} ref={viewerRef} onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}>
           <div className='drag-handle-viewable-h-yellow' style={{ top:position.z }} onMouseDown={handleMouseDown} onMouseUp={handleMouseUp}> 
             <div className='drag-handle-dragable-h'></div>
           </div>  
-          <div className='drag-handle-viewable-v-green' style={{ left:position.y }} onMouseDown={handleMouseDown} onMouseUp={handleMouseUp}> 
+          <div className='drag-handle-viewable-v-green' style={{ left:pictureWidth-position.y }} onMouseDown={handleMouseDown} onMouseUp={handleMouseUp}> 
             <div className='drag-handle-dragable-v'></div>
           </div>  
         </div>
