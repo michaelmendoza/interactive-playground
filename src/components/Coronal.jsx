@@ -6,23 +6,7 @@ const Coronal = ({position, setPosition, picturesize}) => {
   const viewerRef = useRef(null);
 
   const [canDrag, setCanDrag] = useState(false);
-  
-  const [color, setColor] = useState('#EEEEEE')
-  const [isDark, setIsDark] = useState(false)
-  
 
-  const handleClick = () => {
-    setIsDark(!isDark)
-
-    if(!isDark)
-      setColor('#222222')
-    else
-      setColor('#EEEEEE')
-  }
-
-  const drawImg = () => {
-    
-  }
 
   const handleMouseDown = (e) => {
     e.preventDefault();
@@ -54,18 +38,6 @@ const Coronal = ({position, setPosition, picturesize}) => {
     x = x < 0 ? 0 : x
     x = x > viewerRef.current.clientWidth ? viewerRef.current.clientWidth : x
     setPosition({ x, y, z })
-   
-
-    
-    // const factor = Math.floor((position.x - rect.left) * 255 / e.target.clientWidth);
-    // const hexFactor = factor < 16 ? '0' + factor.toString(16) : factor.toString(16)
-    // const hexColor = '#EEEE' + hexFactor
-    
-    // setColor(hexColor);
-  
-    // const maxSlice = 200;
-    // const slice = factor * maxSlice;
-    // drawImg(slice)
   }
 
   return (
